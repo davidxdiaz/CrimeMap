@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:706063786726:android:e464624fc7927275",
         "android_client_info": {
-          "package_name": "com.CrimeMap.android"
+          "package_name": "com.example.emprendimiento.crimemap"
         }
       },
       "oauth_client": [
