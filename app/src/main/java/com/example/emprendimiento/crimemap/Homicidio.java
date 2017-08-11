@@ -12,7 +12,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public abstract class Homicidio extends Delito {
 
     Homicidio(LatLng loc) {
-        super(loc);
+        super(loc,"Me mataron");
     }
 
     @Override

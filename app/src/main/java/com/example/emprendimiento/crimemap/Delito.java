@@ -1,13 +1,17 @@
 package com.example.emprendimiento.crimemap;
 
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.*;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.provider.Telephony;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.SmsManager;
+import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
@@ -16,6 +20,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
+import static android.R.attr.phoneNumber;
+import static android.provider.Telephony.*;
 import static android.support.v4.content.ContextCompat.startActivity;
 
 /**
@@ -32,9 +38,10 @@ public class Delito extends AppCompatActivity implements OnMapReadyCallback {
     Marker ubicacion;
     GoogleMap map;
 
-    Delito(LatLng loc){
+    Delito(LatLng loc, String mensaje){
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         generarMarcador(loc);
+        sendMessage(mensaje);
     }
     //funcion que genera un marcador en el mapa.
     //se emplea en las clases hijas.
@@ -85,6 +92,13 @@ public class Delito extends AppCompatActivity implements OnMapReadyCallback {
         public void onProviderDisabled(String s) {}
     };
 
+    void sendMessage(String men){
+        TelephonyManager tMgr =(TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        String mPhoneNumber = tMgr.getLine1Number();
+        PendingIntent pi = PendingIntent.getActivity(this, 0, new Intent(this, Sms.class), 0);
+        SmsManager sms = SmsManager.getDefault();
+        sms.sendTextMessage(mPhoneNumber, null, men, pi, null);
+    }
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
