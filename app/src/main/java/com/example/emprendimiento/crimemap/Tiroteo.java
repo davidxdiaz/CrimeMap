@@ -11,7 +11,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Tiroteo extends Delito {
     Tiroteo(LatLng loc) {
-        super(loc);
+        super(loc, "Me tirotearon");
     }
 
     void generarMarcador(LatLng loc)

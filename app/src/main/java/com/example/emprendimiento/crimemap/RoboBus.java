@@ -11,12 +11,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class RoboBus extends Delito {
     RoboBus(LatLng loc) {
-        super(loc);
+        super(loc, "Me robaron en el bus");
     }
 
     void generarMarcador(LatLng loc)
     {
         Marker robManArm = map.addMarker(new MarkerOptions().position(loc)
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
     }
 }
