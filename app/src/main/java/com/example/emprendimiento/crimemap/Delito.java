@@ -7,15 +7,18 @@ import android.content.Intent;
 import android.location.*;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.Marker;
+
+import static android.support.v4.content.ContextCompat.startActivity;
 
 /**
  * Created by David on 10/8/2017.
  */
 
-public abstract class Delito extends Context {
+public class Delito extends AppCompatActivity{
 
     String comentario;
     LocationManager locationManager;
@@ -31,7 +34,9 @@ public abstract class Delito extends Context {
     }
     //funcion que genera un marcador en el mapa.
     //se emplea en las clases hijas.
-    abstract Marker generarMarcador();
+    Marker generarMarcador(){
+        return null;
+    }
 
     private boolean checkLocation() {
         if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)||
