@@ -10,6 +10,10 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
 import static android.support.v4.content.ContextCompat.startActivity;
@@ -18,25 +22,23 @@ import static android.support.v4.content.ContextCompat.startActivity;
  * Created by David on 10/8/2017.
  */
 
-public class Delito extends AppCompatActivity{
+public class Delito extends AppCompatActivity implements OnMapReadyCallback {
 
-    String comentario;
+
     LocationManager locationManager;
     double longitudeBest, latitudeBest;
     double longitudeGPS, latitudeGPS;
     double longitudeNetwork, latitudeNetwork;
     Marker ubicacion;
+    GoogleMap map;
 
-    Delito(String comment){
-        this.comentario = comment;
+    Delito(LatLng loc){
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        generarMarcador();
+        generarMarcador(loc);
     }
     //funcion que genera un marcador en el mapa.
     //se emplea en las clases hijas.
-    Marker generarMarcador(){
-        return null;
-    }
+    void generarMarcador(LatLng loc) {}
 
     private boolean checkLocation() {
         if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)||
@@ -83,4 +85,8 @@ public class Delito extends AppCompatActivity{
         public void onProviderDisabled(String s) {}
     };
 
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+    }
 }
