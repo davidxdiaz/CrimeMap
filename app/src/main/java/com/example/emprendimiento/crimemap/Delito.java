@@ -95,9 +95,10 @@ public class Delito extends AppCompatActivity implements OnMapReadyCallback {
     void sendMessage(String men){
         TelephonyManager tMgr =(TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
         String mPhoneNumber = tMgr.getLine1Number();
-        PendingIntent pi = PendingIntent.getActivity(this, 0, new Intent(this, Sms.class), 0);
-        SmsManager sms = SmsManager.getDefault();
-        sms.sendTextMessage(mPhoneNumber, null, men, pi, null);
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage(mPhoneNumber, null, men, null, null);
+        Toast.makeText(getApplicationContext(), "SMS Sent!",
+                Toast.LENGTH_LONG).show();
     }
     @Override
     public void onMapReady(GoogleMap googleMap) {

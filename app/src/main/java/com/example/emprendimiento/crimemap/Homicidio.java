@@ -9,7 +9,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
  * Created by Alejandro Dávila on 10/8/2017.
  */
 
-public abstract class Homicidio extends Delito {
+public class Homicidio extends Delito {
 
     Homicidio(LatLng loc) {
         super(loc,"Me mataron");
