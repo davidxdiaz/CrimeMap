@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "706063786726",
+    "firebase_url": "https://mapcrimen.firebaseio.com",
+    "project_id": "mapcrimen",
+    "storage_bucket": "mapcrimen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706063786726:android:e464624fc7927275",
+        "android_client_info": {
+          "package_name": "com.example.emprendimiento.crimemap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706063786726-khiefbn3pcaut6heu4vv41q9123p6uod.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyjBWLdtohQaZyNnzzmUb4e5hcjCSCe1Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
