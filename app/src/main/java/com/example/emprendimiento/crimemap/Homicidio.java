@@ -5,7 +5,7 @@ import com.google.android.gms.maps.model.Marker;
  * Created by Alejandro Dávila on 10/8/2017.
  */
 
-public class Homicidio extends Delito {
+public abstract class Homicidio extends Delito {
 
     Homicidio(String comment) {
         super(comment);

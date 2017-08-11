@@ -61,8 +61,8 @@ public class MapPreviewActivity extends FragmentActivity implements OnMapReadyCa
         if (marcador != null) marcador.remove();
         marcador = mMap.addMarker(new MarkerOptions()
                 .position(coordenadas)
-                .title("Mi posicion actual")
-                .icon(BitmapDescriptorFactory.defaultMarker(R.mipmap.ic_launcher)));
+                .title("Mi posicion actual"));
+                //.icon(BitmapDescriptorFactory.defaultMarker(R.mipmap.ic_launcher)));
         mMap.animateCamera(miUbicacion);
     }
 
@@ -77,7 +77,7 @@ public class MapPreviewActivity extends FragmentActivity implements OnMapReadyCa
     LocationListener locationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
-
+            actualizarUbicacion(location);
         }
 
         @Override
