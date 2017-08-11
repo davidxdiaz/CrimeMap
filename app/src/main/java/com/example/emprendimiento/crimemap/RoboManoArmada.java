@@ -12,7 +12,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class RoboManoArmada extends Delito {
     RoboManoArmada(LatLng loc) {
-        super(loc);
+        super(loc,"Me asaltaron");
     }
 
     void generarMarcador(LatLng loc)
